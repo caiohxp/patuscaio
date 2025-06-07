@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --background-color: #121212;
+            --text-color: #E0E0E0;
+            --black-card-bg: #212121;
+            --white-card-bg: #FAFAFA;
+            --white-card-text: #000000;
+            --accent-color: #ffeb3b;
+            --danger-color: #f44336;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* --- Tela de Início --- */
+        #start-screen {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background-color: var(--background-color);
+            z-index: 2000;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #start-screen h1 {
+            font-size: 5em;
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        #start-screen p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* --- Área Principal do Jogo --- */
+        #game-area {
+            display: none; /* Começa escondido */
+            flex-direction: column;
+            height: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* --- Mão do Jogador --- */
+        .hand-container {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: flex-start;
+            gap: 15px;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .card {
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            word-wrap: break-word;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+
+        .white-card {
+            background-color: var(--white-card-bg);
+            color: var(--white-card-text);
+            border: 1px solid #BDBDBD;
+            width: 150px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .white-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+        }
+
+        /* --- Controles --- */
+        .controls-container {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        #show-black-card-btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--black-card-bg);
+            background-color: var(--accent-color);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #show-black-card-btn:hover {
+            background-color: #fdd835;
+        }
+
+        /* --- Modais (Tela Cheia) --- */
+        .modal {
+            display: none; /* Começa escondido */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color); /* Fundo opaco */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal.active {
+            display: flex; /* Mostra o modal */
+        }
+
+        .modal-card {
+            width: 90%;
+            max-width: 500px;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .modal-card-text {
+             font-size: 2em;
+             font-weight: bold;
+             padding: 20px;
+             flex-grow: 1;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             text-align: center;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            align-self: center;
+        }
+
+        #close-black-card-btn {
+             background-color: var(--danger-color);
+        }
+        
+        #discard-white-card-btn {
+            background-color: var(--accent-color);
+            color: var(--black-card-bg);
+        }

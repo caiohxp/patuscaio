@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Patuscaio (Multijogador)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Patuscaio</h1>
+        <p>Toque para começar</p>
+    </div>
+
+    <div id="game-area">
+        <div id="hand-container" class="hand-container">
+            <!-- As cartas brancas do jogador aparecerão aqui -->
+        </div>
+
+        <div class="controls-container">
+            <button id="show-black-card-btn">Mostrar Carta Preta (Czar)</button>
+        </div>
+    </div>
+
+    <!-- Modal para a Carta Preta -->
+    <div id="black-card-modal" class="modal">
+        <div class="card black-card modal-card" style="background-color: var(--black-card-bg); color: var(--text-color);">
+            <div id="black-card-modal-text" class="modal-card-text"></div>
+            <button id="close-black-card-btn" class="modal-btn">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Modal para a Carta Branca -->
+    <div id="white-card-modal" class="modal">
+        <div class="card white-card modal-card">
+            <div id="white-card-modal-text" class="modal-card-text"></div>
+            <div class="modal-buttons">
+                 <button id="discard-white-card-btn" class="modal-btn">Descartar esta Carta</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
